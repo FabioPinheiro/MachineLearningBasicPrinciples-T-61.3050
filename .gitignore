@@ -11,8 +11,8 @@
 .Rproj.user/
 
 #Latex
-#Latex/*.aux
-#Latex/*.log
-#Latex/*.out
-#Latex/*.pdf
-#Latex/*.synctex.gz
+Latex/*.aux
+Latex/*.log
+Latex/*.out
+Latex/*.pdf
+Latex/*.synctex.gz
