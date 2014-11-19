@@ -7,7 +7,6 @@ library(class)
 getwd()
 data <- read.csv("T-61_3050_training_dataset.csv")
 
-
 train<-data[1:3750,]
 test<-data[3751:5000,]
                   
@@ -32,3 +31,11 @@ for (i in 1:20) {
 }
 accuracy
 plot(accuracy,type="l")
+
+
+
+truedata <- read.csv("T-61_3050_test_dataset.csv")
+truedatascale<-scale(truedata[-c(12,13)])
+
+
+sum(knn(datascale, truedatascale, data[,13], k = i)==truedata[,13])/1000
