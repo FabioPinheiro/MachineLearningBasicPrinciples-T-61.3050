@@ -45,4 +45,16 @@ sum(knn(data[,1:11], test[,-c(12,13)], data[,12], k = 11)==test[,12])/1000    #A
 
 wholedata<-rbind(data,test)
 wholedatascaled<-scale(wholedata[,-c(12,13)])
-sum(knn(wholedatascaled[1:5000,],wholedatascaled[5001:6000,],data[,12],k=1)==test[,12])/1000 #Accuracy for Scaled
+aux<-knn(wholedatascaled[1:5000,],wholedatascaled[5001:6000,],data[,12],k=1)
+sum(aux==test[,12])/1000 #Accuracy for Scaled
+
+
+matriz<-matrix(0, ncol=7,nrow=7)
+for (i in 1:1000) {
+  b<-aux[i]
+  a<-test[i,12]
+  matriz[a,b]<-matriz[a,b] +1
+}
+matriz
+matriz[7,1]<-100
+

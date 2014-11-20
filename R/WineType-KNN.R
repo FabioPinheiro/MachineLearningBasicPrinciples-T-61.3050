@@ -46,4 +46,15 @@ sum(knn(data[,1:11], test[,-c(12,13)], data[,13], k = 3)==test[,13])/1000    #Ac
 
 wholedata<-rbind(data,test)
 wholedatascaled<-scale(wholedata[,-c(12,13)])
-sum(knn(wholedatascaled[1:5000,],wholedatascaled[5001:6000,],data[,13],k=1)==test[,13])/1000 #Accuracy for Scaled
+aux<- knn(wholedatascaled[1:5000,],wholedatascaled[5001:6000,],data[,13],k=1)
+sum(aux==test[,13])/1000 #Accuracy for Scaled
+
+
+matriz<-matrix(c(0,0,0,0),ncol=2,nrow=2)
+for (i in 1:1000) {
+  if(aux[i]=='White'){b=1}else {b=2}
+  if(test[i,13]=='White'){a=1}else {a=2}
+  matriz[a,b]<-matriz[a,b] +1
+}
+matriz
+
