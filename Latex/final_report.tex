@@ -37,6 +37,7 @@
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -170,26 +171,28 @@ Bedside table & Bedroom
 \subsection{Confusion matrix for the wine quality}
 
 \begin{table}[H]
-\caption{Using k-NN with k=5}
+\caption{Using k-NN with k=1}
 \centering
 \begin{tabular}{r||c|c|c|c|c|c|c}
 \textbf{Quality} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7}\\
 \hline \hline
-\textbf{1} & a & b & c & d & f & g & i\\
+\textbf{1} & 0 & 0 & 0 & 0 & 0 & 0 & 0	\\
 \hline
-\textbf{2} & a & b & c & d & f & g & i\\
+\textbf{2} & 0 & 13 & 7 & 5 & 1 & 0 & 0\\
 \hline
-\textbf{3} & a & b & c & d & f & g & i\\
+\textbf{3} & 0 & 9 & 114 & 49 & 9 & 0 & 0\\
 \hline
-\textbf{4} & a & b & c & d & f & g & i\\
+\textbf{4} & 0 & 6 & 44 & 272 & 78 & 8 & 0\\
 \hline
-\textbf{5} & a & b & c & d & f & g & i\\
+\textbf{5} & 0 & 0 & 11 & 99 & 225 & 9 & 0\\
 \hline
-\textbf{6} & a & b & c & d & f & g & i\\
+\textbf{6} & 0 & 0 & 3 & 11 & 12 & 10 & 0\\
 \hline
-\textbf{7} & a & b & c & d & f & g & i\\
+\textbf{7} & 0 & 0 & 0 & 1 & 3 & 1 & 0\\
 \end{tabular}
 \end{table}
+
+
 
 
 \begin{table}[H]
@@ -243,13 +246,9 @@ k par and k odd
 
 \bibliographystyle{plain}
 \bibliography{final_report}{}
-boots\\
-wiki\\
-net \\
-f*** this shit, I'm out\\
 %------------------------------------------------
 
-%\section*{Appendix A}
+\section*{Appendix A}
 
 %\lipsum[17]
 
