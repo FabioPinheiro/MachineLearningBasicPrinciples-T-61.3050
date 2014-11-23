@@ -34,15 +34,14 @@
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
 
 \usepackage{amsmath}
-\usepackage{algpseudocode}
 \usepackage{algorithm}
-
+\usepackage[noend]{algpseudocode}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Comparing k-NN and Logistic Regression algorithms for wine classification}}
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Comparing k-NN and Logistic Regression algorithms for Wine classification}}
 
 \author{
 \large
@@ -63,11 +62,12 @@
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
+The idea of the project and this report is to see how different KNN and Logistic Regression are. Our main problem divides itself in two sub problems of supervised classification, with one being a binary supervised classification and the other a 7-class supervised classification, and we will see how both algorithms behave in each case.
 
 %\noindent \lipsum[1]
 
 \end{abstract}
-Com o almento do power computational começa a fazer sentido usar algoritons mais complaxesos para obetremos melhores resultados.
+""""Com o almento do power computational começa a fazer sentido usar algoritons mais complaxesos para obetremos melhores resultados.""""
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
@@ -77,18 +77,8 @@ Com o almento do power computational começa a fazer sentido usar algoritons mai
 
 \section{Introduction}
 \indent \par
-TODO
-Something in this document. This paragraph contains no information 
-and its purposes is to provide an example on how to insert white 
-spaces and lines breaks.\\
-Something in this document. This paragraph contains no information 
-and its purposes is to provide an example on how to insert white 
-spaces and lines breaks.\par
-When a line break is inserted, the text is not indented, there 
-are a couple of extra commands do line breaks. \newline
-This paragraph provides no information whatsoever. We are exploring 
-line breaks. \hfill \break
-And combining two commands
+The data we're given consists of a set of measures from 6000 different wines. The attributes of the wines are "fixedAcidity", "volatileAcidity"," citricAcid", "residualSugar", "chlorides", freeSulfurDioxide, "totalSulfurDioxide", "density", "pH", "sulphates", "alcohol", "quality" and "type". Our first goal is try and predict the quality of the wine, which is classified as "White" or "Red, and later, try and predict based on the same attributes the quality of the wine which is a integer variable ranging from 1 to 7, 1 being really good, and 7 being really poor. Based on the results and our understading of how the algoithms work, we will try and see how different it is to predict to a binary class or a 7-value class.\\
+ """"""""""ACRESCENTAR MERDAS AQUI""""""""""""
 %\lipsum[2-4]
 
 
@@ -99,19 +89,35 @@ And combining two commands
 
 \subsection*{k-nearest neighbors algorithm (k-NN)}
 \indent \par
-k-nearest neighbors algorithm also known as k-NN is a non-parametric method used for classification and regression. In both cases the k-NN algorithm starts from the principle that similar data are
-closed one to another. \par
-The algorithm is just given a point '$Y$' to find the k points from training data where distance where is smaller that all the anthers. Then choose the class more frequent, in case of a tie, pick a random one random among the most frequented.
+K-nearest neighbors algorithm also known as k-NN is a non-parametric method used for classification and regression. In both cases the k-NN algorithm starts from the principle that similar data are closed one to another.\par
+The algorithm is just given a point '$Y$' to find the '$k$' points from training data where distance where is smaller that all the anthers. Then choose the class more frequent, in case of a tie, pick one at random among them.\par
+The pseudocode for k-NN can be seen in Algorithm~\ref{alg:KNN} \cite{CA}
+%The pseudocode for k-NN in Algorithm~\ref{alg:KNN}, is from Statistical Methods in Data Mining Lecture Slides \cite{CA}.
 
+\begin{algorithm*}[t]
+%\footnotemark
+\caption{KNN} %\footnote{An example footnote.}}
+\label{alg:KNN}
+\begin{algorithmic} [1]
+    \State Define the distance measure or similarity between two objects \label{1}
+    \State Find k; \label{KNN-fnd-k}
+    \State Compute the distance between the new object and all objects in the training set: $d(xi, x0) i = 1, 2, . . . , n;$
+	\State Sort the distances in increasing numerical order and pick the first k elements (neighbours), let be $Vk (x0) \subseteq D$, the set of those neighbours;
+    \State Save the classifications of all neighbours;
+    \State Assign new object to the class based on majority vote of its
+neighbours 2, i.e.	\[	\mathcal{Y}_0 = \substack{arg\ max\ \\ C_j} \sum_{(x_i,y_i)\subset V_(x_0)} I(y_i=C_j) \]
+\end{algorithmic}
+\end{algorithm*}
+%\footnotetext{.}
 \subsubsection*{Euclidean Distance}
 For n dimensions Euclidean Distance is give by following formula:
 \[ d(p,q)= \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2 + ... + (p_n - q_n)^2} \]
 (Dimensions in here is the number of feature/parameters of the data)
-\subsubsection*{???????? Distance}
-TODO 
+
 \subsection*{Logistic Regression}
 \indent \par
-"It is assumed that we have a series of N observed data points. Each data point i consists of a set of m explanatory variables $x_{1,i} x_{2,i} $ ... $x_{m,i}$ (also called independent variables, predictor variables, input variables, features, or attributes), and an associated binary-valued outcome variable $Y_i$ (also known as a dependent variable, response variable, output variable, outcome variable or class variable), i.e. it can assume only the two possible values "failure" or 1 "success". The goal of logistic regression is to explain the relationship between the explanatory variables and the outcome, so that an outcome can be predicted for a new set of explanatory variables."
+"It is assumed that we have a series of N observed data points. Each data point i consists of a set of m explanatory variables $x_{1,i} x_{2,i} \dots x_{m,i}$ (also called independent variables, predictor variables, input variables, features, or attributes), and an associated binary-valued outcome variable $Y_i$ (also known as a dependent variable, response variable, output variable, outcome variable or class variable), i.e. it can assume only the two possible values "failure" or 1 "success". The goal of logistic regression is to explain the relationship between the explanatory variables and the outcome, so that an outcome can be predicted for a new set of explanatory variables."
+
 %\lipsum[5-9]
 
 %\begin{figure}[H]
@@ -124,36 +130,32 @@ TODO
 %------------------------------------------------
 
 \section{Experiments}
+\subsection*{data:}
+\begin{itemize}
+  \item Number of parameters: 11
+  \item Number of samples in training set: $5000$
+  \item \#Red: $906$
+  \item \#White: $4094$
+  \item \#Quality1: $5$
+  \item \#Quality2: $161$
+  \item \#Quality3: $854$
+  \item \#Quality4: $2197$
+  \item \#Quality5: $1604$
+  \item \#Quality6: $159$
+  \item \#Quality7: $20$
+  \item Number of samples in test set: $1000$
+\end{itemize}
 \subsection*{Wine type:}
 \indent \par
 To classify the type of wine first we used the k-nearest neighbors algorithm.
 To choose the K we separate the training dataset in two set (3750 points for training and points 1250 points for validation). \par
-After to improve the results we try to use the some method but with the data normalize. 
-
+After to improve the results we try to use the some method but with the data normalize.
 \subsection*{Wine quality}
-F
-
 
 
 %------------------------------------------------
 
 \section{Results}
-
-\begin{itemize}
-  \item Number of parameters: 11
-  \item Number of samples in training set: $5000$?
-  \item Number of samples in test set: $1000$
-  \item \#Red: $906$
-  \item \#White: $4094$
-  \item \#Q1: $5$
-  \item \#Q2: $161$
-  \item \#Q3: $854$
-  \item \#Q4: $2197$
-  \item \#Q5: $1604$
-  \item \#Q6: $159$
-  \item \#Q7: $20$
-\end{itemize}
-
 
 
 \begin{table}[H]
@@ -243,17 +245,40 @@ k par and k odd
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
+%\bibliography{final_report}
+%\bibliographystyle{plain}
 
 \bibliographystyle{plain}
 \bibliography{final_report}{}
-%------------------------------------------------
+\begin{thebibliography}{}	
+\bibitem{alpaydin}
+  Alpaydin, Ethem -   
+  Introduction to machine learning, 
+  MIT press,
+  2004.
+\bibitem{CA} 
+  Concei\,{c}\~{a}o, Amado -
+  Lecture Slides: Statistical Methods in Data Mining (2014). Instituto Superior Técnico, Portugal.  
+\bibitem{ng}
+  Ng, Andrew - 
+  Machine Learning. Multiclass Classifier: One-vs-All,
+  \url{https://class.coursera.org/ml-005/lecture/38}.
+\bibitem{hb}
+  Howe, Bill - 
+  k Nearest Neighbors,
+  \url{https://class.coursera.org/datasci-001/lecture/161}
 
+  
+\end{thebibliography}
+%------------------------------------------------
+\end{multicols}
+\newpage
 \section*{Appendix A}
 
 %\lipsum[17]
 
 %----------------------------------------------------------------------------------------
 
-\end{multicols}
+
 
 \end{document}
