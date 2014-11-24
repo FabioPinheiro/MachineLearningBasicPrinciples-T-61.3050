@@ -47,7 +47,7 @@
 \author{
 \large
 \textsc{T-61.3050 Term Project, final report}\\[2mm]
-\textsc{472735 F\'{a}bio Pinheiro \& 472191 Jo\~{a}o Duro}\\[2mm]
+\textsc{F\'{a}bio Pinheiro 472735 \& Jo\~{a}o Duro 472191}\\[2mm]
 \vspace{-5mm}
 }
 \date{}
@@ -77,20 +77,20 @@ The idea of the project and this report is to see how different kNN and Logistic
 
 \section{Introduction}
 \indent \par
-The data we're given consists of a set of measures from 6000 different wines. The attributes of the wines are "fixedAcidity", "volatileAcidity"," citricAcid", "residualSugar", "chlorides", freeSulfurDioxide, "totalSulfurDioxide", "density", "pH", "sulphates", "alcohol", "quality" and "type". Our first goal is try and predict the quality of the wine, which is classified as "White" or "Red, and later, try and predict based on the same attributes the quality of the wine which is a integer variable ranging from 1 to 7, 1 being really good, and 7 being really poor. Based on the results and our understading of how the algoithms work, we will try and see how different it is to predict to a binary class or a 7-value class.\\
+The data we're given consists of a set of measures from 6000 different wines. The attributes of the wines are "fixedAcidity", "volatileAcidity"," citricAcid", "residualSugar", "chlorides", freeSulfurDioxide, "totalSulfurDioxide", "density", "pH", "sulphates", "alcohol", "quality" and "type". Our first goal is try and predict the type of the wine, which is classified as "White" or "Red, and later, try and predict based on the same attributes the quality of the wine which is a integer variable ranging from 1 to 7, 1 being really good, and 7 being really poor. Based on the results and our understanding of how the algorithms work, we will try and see how different it is to predict a binary class or a 7-value class.
+ \par So, which one of our methods is better to classify the wine type or wine quality?
+\\
 %\lipsum[2-4]
 
 
 %------------------------------------------------
 
 \section{Methods}
-\subsection*{Normalize data}
-
-\subsection*{k-nearest neighbors algorithm (kNN)}
+\subsection*{\textbf{k-Nearest Neighbors algorithm (kNN)}}
 \indent \par
-K-nearest neighbors algorithm also known as kNN is a non-parametric method used for classification and regression. In both cases the kNN algorithm starts from the principle that similar data are closed one to another.\par
-The algorithm is just given a point '$Y$' to find the '$k$' points from training data where distance where is smaller that all the anthers. Then choose the class more frequent, in case of a tie, pick one at random among them.\par
-The pseudocode for kNN can be seen in Algorithm~\ref{alg:KNN} \cite{CA}
+K-nearest neighbors algorithm also known as kNN is a non-parametric method used for classification and regression. The kNN algorithm starts from the principle that similar data are closed one to another.\par
+The algorithm works in a very simple way: given a point '$Y$' we find the '$k$' nearest points from the training data Then choose the most frequent class among them, and in case of a tie, pick one at random.\par
+The pseudo-code for kNN can be seen in Algorithm~\ref{alg:KNN} \cite{CA}
 %The pseudocode for kNN in Algorithm~\ref{alg:KNN}, is from Statistical Methods in Data Mining Lecture Slides \cite{CA}.
 
 \begin{algorithm*}[t]
@@ -101,10 +101,10 @@ The pseudocode for kNN can be seen in Algorithm~\ref{alg:KNN} \cite{CA}
     \State Define the distance measure or similarity between two objects \label{1}
     \State Find k; \label{KNN-fnd-k}
     \State Compute the distance between the new object and all objects in the training set: $d(xi, x0) i = 1, 2, . . . , n;$
-	\State Sort the distances in increasing numerical order and pick the first k elements (neighbours), let be $Vk (x0) \subseteq D$, the set of those neighbours;
-    \State Save the classifications of all neighbours;
+	\State Sort the distances in increasing numerical order and pick the first k elements (neighbors), let be $Vk (x0) \subseteq D$, the set of those neighbors;
+    \State Save the classifications of all neighbors;
     \State Assign new object to the class based on majority vote of its
-neighbours 2, i.e.	\[	\mathcal{Y}_0 = \substack{arg\ max\ \\ C_j} \sum_{(x_i,y_i)\subset V_(x_0)} I(y_i=C_j) \]
+neighbors 2, i.e.	\[	\mathcal{Y}_0 = \substack{arg\ max\ \\ C_j} \sum_{(x_i,y_i)\subset V_(x_0)} I(y_i=C_j) \]
 \end{algorithmic}
 \end{algorithm*}
 %\footnotetext{.}
@@ -113,20 +113,24 @@ For n dimensions Euclidean Distance is give by following formula:
 \[ d(p,q)= \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2 + ... + (p_n - q_n)^2} \]
 (Dimensions in here is the number of feature/parameters of the data)
 
-\subsection*{Logistic Regression}
+\subsection*{\textbf{Logistic Regression}}
 \indent \par
-"It is assumed that we have a series of N observed data points. Each data point i consists of a set of m explanatory variables $x_{1,i} x_{2,i} \dots x_{m,i}$ (also called independent variables, predictor variables, input variables, features, or attributes), and an associated binary-valued outcome variable $Y_i$ (also known as a dependent variable, response variable, output variable, outcome variable or class variable), i.e. it can assume only the two possible values "failure" or 1 "success". The goal of logistic regression is to explain the relationship between the explanatory variables and the outcome, so that an outcome can be predicted for a new set of explanatory variables."
+Logistic regression is similar to others regressions. It models the relationship between a dependent and one or more independent variables, and allows us to look at the fit of the model as well as at the significance of the relationships (between dependent and independent variables) that we are modeling.\\
+The method estimates the probability of an event occurring. What we want to predict from a knowledge of relevant independent variables is not a precise numerical value of a dependent variable, but rather the probability that it is 1 rather than 0.\\
+\[P=\frac{e^{\alpha+\beta x}}{1+e^{\alpha+\beta x}}\]
+Where P is the probability of a The value of $\alpha$ yields P when x is zero, and $\beta$ indicates how the probability of a 1 changes.\\
 
 %\lipsum[5-9]
 
 %------------------------------------------------
 
 \section{Experiments}
-\indent \par
-	The first thing we need to do is to separate our data consisting of 6000 row elements in training and validation set, and a test set, which will be used exclusevly to predict the error of our methods. We splited the data so we have 1000 elements in the test set, and the remaining data will be used to train our model or to make assesments about the data, this will not be used to predict the error of our models.\par
-	A premminilary analysis shows us the data is not normalized, so when applying different algorithms this will play a huge role, but we decided to test it as it is, and then normalize the data and see how much it improves, if it improves, as we believe it will.\par
-	The procedures we took for predict the quality and type of the wine were the same, except when predicting the quality we used the values predicted for wine type to see if would improve it somehow.\par
-	Our first task is to predict the wine type since it will be more accurate being just a binary problem. When applying the kNN we first had to predict what's the k (the number of neighbours). We did this, separating the training set (consisting of the 5000 elements) into 3750 training elements, and 1250 validation elements. We run the kNN with K going from 1 to 20, recorded the errors and took conclusions from that. We then did the same for the standardized data. To apply the logistic regression we just used the whole training set as one, and didn't split it. Predicted the type with non normalized data, it was time to use a go with the normalized approach. The logistic regression was basically the same, we normalized the variables using the 6000 elements, and made a prediction. We the kNN, we first normalized the 5000 elements of the training set (without the quality and type) and tried to get the best K for the problem. After that, we joined both the training set and test set, without the quality and type variables, and normalized it, and we made the prediciton for the type.\par
+The first thing we need to do is to separate our data consisting of 6000 row elements in training and validation set, and a test set, which will be used exclusively to predict the error of our methods. We spited the data so we have 1000 elements in the test set, and the remaining data will be used to train our model or to make assessments about the data, this will not be used to predict the error of our models.\par
+	A preliminary analysis shows us the data is not normalized, so when applying both algorithms this will play a huge role, but we decided to test it as it is, and then normalize the data and see how much it improves, if it improves, and we believe it will.\par
+	The procedures we took to predict the quality and type of the wine were the same, except when predicting the quality we used the values predicted for wine type to see if would improve it somehow.\par
+	Our first task is to predict the wine type since it will be more accurate being just a binary problem. When applying the kNN we first had to predict what k (the number of neighbors) to use. We did this separating the training set (consisting of the 5000 elements) into 3750 training elements, and 1250 validation elements. We ran the kNN algorithm with k going from 1 to 20, recorded the errors and took conclusions from that. We then did the same for the standardized data.\par
+	 To apply the logistic regression we just used the whole training set as one, and didn't split it. Predicted the type with non normalized data, it was time to use a the normalized approach, and the procedure was the same.\par
+	The logistic regression was basically the same, we normalized the variables using the 6000 elements, and made a prediction. With the kNN, we first normalized the 5000 elements of the training set (without the quality and type) and tried to get the best K for the problem. After that, we joined both the training set and test set, without the quality and type variables, and normalized it, and we made the prediction for the type.\par
 As said before, when predicting the quality type using either algorithm, we tried using the wine type to see if the results improved in some way.
 
 %\subsection*{Wine type:}
@@ -179,7 +183,7 @@ Quality (scaled \& k=1) & $63.4\%$\\
 \end{tabular}
 \end{table}
 
-In the the confusion matrices the columns have the expected values and the line we have the real values. For example: In table~\ref{ConfusionKNNscaled}, six white wines have been predicted to be red.
+In the confusion matrices the columns represent the prediction values and the line are real values. For example: In table~\ref{ConfusionKNNscaled}, six white wines have been predicted to be red.
 
 \begin{table}[H]
 \caption{Confusion matrix for quality using kNN with k=1 and data scaled}
@@ -255,17 +259,18 @@ Quality using type & $51.8\%$\\
 
 %------------------------------------------------
 
-\section{Discussion}
+\section{Discussion}%FIX ~\ref{fig:findK}
 \indent \par
-Regarding the use of the kNN algorithm we can confirm our initial assumption that if we normalized the data we would have better results. As seen in table ~\ref{summarykNN}, we can say that there's a huge improvement in the accuracy both for wine prediction and quality prediction. We can see this happen in part because the algorithm uses euclidean distance, which is very sensible to the scales we're using. The results we have for the binary problem are much better than for the 7 class problem as we also predicted, but that's most always like that, since separating data into more classes is harder than if we have to choose between just two classes. We used Figure ~\ref{fig:FindK} to choose the best k to use in the kNN algorithm One thing to notice using kNN in a binary classification problem, is that if we choose an odd number of neighbors the accuracy will always be the same, because the predictions will always be the same. That doesn't happen if we choose an even number of neighbors because when finding the k nearest neighbors, we can (and most likely will) find an equal number of different labels, and as the algorithm states, we have to choose one at random. This will make the predictions change each time we run the algorithm, and with it, the accuracy. But in general, with data as big as we have, the results tend to stable and not vary that much. 
+Regarding the use of the kNN algorithm we can confirm our initial assumption that if we normalized the data we would have better results. As seen in table ~\ref{summarykNN}, we can say that there's a huge improvement in the accuracy both for wine prediction and quality prediction. We can see this happen in part because the algorithm uses euclidean distance, which is very sensible to the scales of the variables we're using. The results we have for the binary problem are much better than for the 7 class problem as we also predicted, but that's most always like that, since separating data into more classes is harder than if we have to choose between just two classes. We used Figure 1  to choose the best k to use in the kNN algorithm. One thing to notice using kNN in a binary classification problem, is that if we choose an odd number of neighbors the accuracy will always be the same, because the predictions will always be the same. That doesn't happen if we choose an even number for the number of neighbours because when finding the k nearest neighbors, we can (and most likely will sometimes) find an equal number of different labels, and as the algorithm states, we have to choose one at random. This will make the predictions change each time we run the algorithm, and with it, the accuracy. But in general, with data as big as we have, the results tend to stable and not vary that much. 
 \par
-Comparing the results from the two algorithms , we see that for predicting the wine type, the logistic regression is more suitable, as we have better accuracy than the kNN algorithm even when using scaled data. On the other hand, the logistic regression algorithm doesn't seem to work as well when the number of predicting classes increases, and in this case, using kNN with scaled that gives us way better accuracy than the logistic regression algorithm. Overall, we get really good results. Of course the binary problem has in all cases better accuracy, since its a simpler problem. Looking at both confusion matrices for the wine quality we noticed a very interesting fact. Both algorithms, even when falling to classify the exact class, don't classify it very far away from it. Since it's the quality of the wine is an ordered scale, predicting a wine has having quality "2" when in fact has quality "1" or "3" in not has bad has classifying it has having quality "7". So, even when failing the prediction, our algorithms don't fail by that much. On last point on the poor results of the wine quality is that their labels very subjective, since they're based on human taste, and is not very precise, it depends on the people grading them, so that might have an affect on the results, and certainty has to some extend.
+Comparing the results from the two algorithms , we see that for predicting the wine type, the logistic regression is more suitable, as we have better accuracy than the kNN algorithm even when using scaled data on the last one. On the other hand, the logistic regression algorithm doesn't seem to work as well when the number of predicting classes increases, and in this case, using kNN with scaled that gives us way better accuracy than the logistic regression algorithm. Overall, we get really good results. Of course the binary problem has in all cases better accuracy, since its a simpler problem. Looking at both confusion matrices for the wine quality we noticed a very interesting fact. Both algorithms, even when falling to classify the exact class, don't classify it very far away from the real class. Since the quality of the wine is an ordered scale, predicting a wine has having quality "2" when in fact has quality "1" or "3" in not has bad has classifying it has having quality "7". So, even when failing the prediction, our algorithms don't fail by that much. One last point on the poor results of the wine quality is that their labels are very subjective, since they're based on human taste and opinion, so it is not very precise, it depends on the people grading them, so that might have an affect on the results, and we believe it has , at least to some extend.
 \par
 For computational resources:
-In terms of space that the kNN algorithm have to keep all training data to be able to predict, as opposed to the Logistic Regression that one has made the pre-processing don not need to keep the training data;
-In terms of processing the Logistic Regression have all the work in the pre-processing,  the kNN does not have any pre-processing but for every prediction have a high cult try to find the k closer values.
+In terms of space, the kNN algorithm have to keep all training data to be able to predict new labels, as opposed to the Logistic Regression that after the pre-processing and training of the algorithm, we don't need to keep the training data.
+	In terms of processing the Logistic Regression have all the work in the pre-processing,  the kNN does not have any pre-processing but for every prediction have a high cult try to find the k closer values.
 \par
-For future analysis it could be experiment with different functions of distances for the kNN algorithm and also makes sense to normalize the data for Logistic Regression and comparing the resultants.
+For future analysis we could try different distances for the kNN algorithm, and try to normalize the data for the Logistic Regression.
+
 
 %\lipsum[15-16]
 
@@ -316,7 +321,7 @@ For future analysis it could be experiment with different functions of distances
 \includegraphics[width=0.5\textwidth]{img/KNN-Quality(Scaled).png}
 \caption{kNN - Quality (With out and with the data scaled)}
 \end{subfigure}
-\label{fig:FindK}
+\label{fig:findK}
 \caption{Find k for the kNN}
 \end{figure}
 
