@@ -151,20 +151,22 @@ After to improve the results we try to use the some method but with the data nor
 
 \section{Results}
 
-
+\subsection*{k-NN}
 \begin{table}[H]
 \caption{My current knowledge of tables}
 \centering
-\begin{tabular}{cc}
+\begin{tabular}{r|l}
 \textbf{Table type} & \textbf{Likely location}\\
 \midrule
-Coffee table & Living room\\
-Dining table & Dining room\\
-Bedside table & Bedroom
+Type (With out the data scaled) & $0.953$\\
+Type (With the data scaled) & $0.994$\\
+\hline
+Quality (With out the data scaled) & $0.428$\\
+Quality (With the data scaled) & $0.634$\\
 \end{tabular}
 \end{table}
 
-\subsection{Confusion matrix for the wine quality}
+\subsubsection*{Confusion matrix for the wine quality}
 
 \begin{table}[H]
 \caption{Using k-NN with k=1}
@@ -172,7 +174,7 @@ Bedside table & Bedroom
 \begin{tabular}{r||c|c|c|c|c|c|c}
 \textbf{Quality} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7}\\
 \hline \hline
-\textbf{1} & 0 & 0 & 0 & 0 & 0 & 0 & 0	\\
+\textbf{1} & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 \hline
 \textbf{2} & 0 & 13 & 7 & 5 & 1 & 0 & 0\\
 \hline
@@ -189,27 +191,40 @@ Bedside table & Bedroom
 \end{table}
 
 
+\subsection*{Logistic Regression}
+\begin{table}[H]
+\caption{My current knowledge of tables}
+\centering
+\begin{tabular}{r|l}
+\textbf{Table type} & \textbf{Likely location}\\
+\midrule
+Type & $0.996$\\
+Quality & $0.513$\\
+Quality using type & $0.518$\\
+\end{tabular}
+\end{table}
 
 
+\subsubsection*{Confusion matrix for the wine quality using type}
 \begin{table}[H]
 \caption{Using logistic regression}
 \centering
 \begin{tabular}{r||c|c|c|c|c|c|c}
 \textbf{Quality} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7}\\
 \hline \hline
-\textbf{1} & a & b & c & d & f & g & i\\
+\textbf{1} & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 \hline
-\textbf{2} & a & b & c & d & f & g & i\\
+\textbf{2} & 0 & 0 & 13 & 13 & 0 & 0 & 0\\
 \hline
-\textbf{3} & a & b & c & d & f & g & i\\
+\textbf{3} & 0 & 0 & 42 & 129 & 10 & 0 & 0\\
 \hline
-\textbf{4} & a & b & c & d & f & g & i\\
+\textbf{4} & 0 & 0 & 19 & 312 & 77 & 0 & 0\\
 \hline
-\textbf{5} & a & b & c & d & f & g & i\\
+\textbf{5} & 0 & 0 & 3 & 177 & 164 & 0 & 0\\
 \hline
-\textbf{6} & a & b & c & d & f & g & i\\
+\textbf{6} & 0 & 0 & 0 & 12 & 24 & 0 & 0\\
 \hline
-\textbf{7} & a & b & c & d & f & g & i\\
+\textbf{7} & 0 & 0 & 0 & 2 & 2 & 1 & 0\\
 \end{tabular}
 \end{table}
 %\lipsum[12-14]
@@ -258,8 +273,7 @@ k par and k odd
   Machine Learning. Multiclass Classifier: One-vs-All,
   \url{https://class.coursera.org/ml-005/lecture/38}.
 \bibitem{hb}
-  Howe, Bill - 
-  k Nearest Neighbors,
+  Howe, Bill - k Nearest Neighbors,
   \url{https://class.coursera.org/datasci-001/lecture/161}
 
   

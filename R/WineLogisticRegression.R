@@ -33,7 +33,8 @@ ret2<-sum(aux==mytestdata[,14])/1000
 print('Quality with type')
 logi3<-glm(quality~fixedAcidity + volatileAcidity+citricAcid+ residualSugar+chlorides+freeSulfurDioxide+totalSulfurDioxide+density+pH+sulphates+alcohol+V14,data=mydata[,-c(13)] )
 confint(logi3)
-ret3<-sum(round(predict(logi3, newdata= mytestdata[,-(13)]))==mytestdata[,12])/1000
+aux<-round(predict(logi3, newdata= mytestdata[,-(13)]))
+ret3<-sum(aux==mytestdata[,12])/1000
 
 print('Quality')
 ret1
@@ -41,3 +42,14 @@ print('Type')
 ret2
 print('Quality with type')
 ret3
+
+
+matriz<-matrix(0, ncol=7,nrow=7)
+for (i in 1:1000) {
+  b<-aux[i]
+  a<-mytestdata[i,12]
+  matriz[a,b]<-matriz[a,b] +1
+}
+matriz
+matriz[7,1]<-100
+
