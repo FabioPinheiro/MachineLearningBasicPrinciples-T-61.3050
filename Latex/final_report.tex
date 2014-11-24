@@ -139,37 +139,37 @@ For n dimensions Euclidean Distance is give by following formula:
   \item \#Quality7: $20$
   \item Number of samples in test set: $1000$
 \end{itemize}
-\subsection*{Wine type:}
+
 \indent \par
-To classify the type of wine first we used the k-nearest neighbors algorithm.
-To choose the K we separate the training dataset in two set (3750 points for training and points 1250 points for validation). \par
-After to improve the results we try to use the some method but with the data normalize.
-\subsection*{Wine quality}
+	The first thing we need to do is to separate our data consisting of 6000 row elements in training and validation set, and a test set, which will be used exclusevly to predict the error of our methods. We splited the data so we have 1000 elements in the test set, and the remaining data will be used to train our model or to make assesments about the data, this will not be used to predict the error of our models.\par
+	A premminilary analysis shows us the data is not normalized, so when applying different algorithms this will play a huge role, but we decided to test it as it is, and then normalize the data and see how much it improves, if it improves, as we believe it will.\par
+	The procedures we took for predict the quality and type of the wine were the same, except when predicting the quality we used the values predicted for wine type to see if would improve it somehow.\par
+	Our first task is to predict the wine type since it will be more accurate being just a binary problem. When applying the KNN we first had to predict what's the k (the number of neighbours). We did this, separating the training set (consisting of the 5000 elements) into 3750 training elements, and 1250 validation elements. We run the KNN with K going from 1 to 20, recorded the errors and took conclusions from that. We then did the same for the standardized data. To apply the logistic regression we just used the whole training set as one, and didn't split it. Predicted the type with non normalized data, it was time to use a go with the normalized approach. The logistic regression was basically the same, we normalized the variables using the 6000 elements, and made a prediction. We the KNN, we first normalized the 5000 elements of the training set (without the quality and type) and tried to get the best K for the problem. After that, we joined both the training set and test set, without the quality and type variables, and normalized it, and we made the prediciton for the type.\par
+As said before, when predicting the quality type using either algorithm, we tried using the wine type to see if the results improved in some way.
 
-
+%\subsection*{Wine type:}
+%\subsection*{Wine quality}
 %------------------------------------------------
 
 \section{Results}
 
 \subsection*{k-NN}
 \begin{table}[H]
-\caption{My current knowledge of tables}
+\caption{aaaaaaaaaaaaaaaaaa}
 \centering
 \begin{tabular}{r|l}
-\textbf{Table type} & \textbf{Likely location}\\
+\textbf{Table type} & \textbf{aaaaaaaaaaaaa}\\
 \midrule
-Type (With out the data scaled) & $0.953$\\
-Type (With the data scaled) & $0.994$\\
+Type  & $0.953$\\
+Type (scaled) & $0.994$\\
 \hline
-Quality (With out the data scaled) & $0.428$\\
-Quality (With the data scaled) & $0.634$\\
+Quality & $0.428$\\
+Quality (scaled) & $0.634$\\
 \end{tabular}
 \end{table}
 
-\subsubsection*{Confusion matrix for the wine quality}
-
 \begin{table}[H]
-\caption{Using k-NN with k=1}
+\caption{Confusion matrix for k-NN with k=1}
 \centering
 \begin{tabular}{r||c|c|c|c|c|c|c}
 \textbf{Quality} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7}\\
@@ -193,10 +193,10 @@ Quality (With the data scaled) & $0.634$\\
 
 \subsection*{Logistic Regression}
 \begin{table}[H]
-\caption{My current knowledge of tables}
+\caption{aaaaaaaaaaaaaaaaaa}
 \centering
 \begin{tabular}{r|l}
-\textbf{Table type} & \textbf{Likely location}\\
+\textbf{Table type} & \textbf{aaaaaaaaaaaaaaaaaa}\\
 \midrule
 Type & $0.996$\\
 Quality & $0.513$\\
@@ -205,9 +205,8 @@ Quality using type & $0.518$\\
 \end{table}
 
 
-\subsubsection*{Confusion matrix for the wine quality using type}
 \begin{table}[H]
-\caption{Using logistic regression}
+\caption{Confusion matrix for logistic regression}
 \centering
 \begin{tabular}{r||c|c|c|c|c|c|c}
 \textbf{Quality} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7}\\
