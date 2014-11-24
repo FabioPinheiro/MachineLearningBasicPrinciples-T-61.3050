@@ -153,6 +153,7 @@ As said before, when predicting the quality type using either algorithm, we trie
 \subsection*{\textbf{kNN:}}
 \begin{table}[H]
 \caption{Result summary for kNN}
+\label{summarykNN}
 \centering
 \begin{tabular}{r|l}
 \textbf{Experiment} & \textbf{Accuracy}\\
@@ -255,21 +256,17 @@ Quality using type & $51.8\%$\\
 %------------------------------------------------
 
 \section{Discussion}
+\indent \par
+Regarding the use of the kNN algorithm we can confirm our initial assumption that if we normalized the data we would have better results. As seen in table ~\ref{summarykNN}, we can say that there's a huge improvement in the accuracy both for wine prediction and quality prediction. We can see this happen in part because the algorithm uses euclidean distance, which is very sensible to the scales we're using. The results we have for the binary problem are much better than for the 7 class problem as we also predicted, but that's most always like that, since separating data into more classes is harder than if we have to choose between just two classes. We used Figure ~\ref{fig:FindK} to choose the best k to use in the kNN algorithm One thing to notice using kNN in a binary classification problem, is that if we choose an odd number of neighbors the accuracy will always be the same, because the predictions will always be the same. That doesn't happen if we choose an even number of neighbors because when finding the k nearest neighbors, we can (and most likely will) find an equal number of different labels, and as the algorithm states, we have to choose one at random. This will make the predictions change each time we run the algorithm, and with it, the accuracy. But in general, with data as big as we have, the results tend to stable and not vary that much. 
+\par
+Comparing the results from the two algorithms , we see that for predicting the wine type, the logistic regression is more suitable, as we have better accuracy than the kNN algorithm even when using scaled data. On the other hand, the logistic regression algorithm doesn't seem to work as well when the number of predicting classes increases, and in this case, using kNN with scaled that gives us way better accuracy than the logistic regression algorithm. Overall, we get really good results. Of course the binary problem has in all cases better accuracy, since its a simpler problem. Looking at both confusion matrices for the wine quality we noticed a very interesting fact. Both algorithms, even when falling to classify the exact class, don't classify it very far away from it. Since it's the quality of the wine is an ordered scale, predicting a wine has having quality "2" when in fact has quality "1" or "3" in not has bad has classifying it has having quality "7". So, even when failing the prediction, our algorithms don't fail by that much. On last point on the poor results of the wine quality is that their labels very subjective, since they're based on human taste, and is not very precise, it depends on the people grading them, so that might have an affect on the results, and certainty has to some extend.
+\par
+For computational resources:
+In terms of space that the kNN algorithm have to keep all training data to be able to predict, as opposed to the Logistic Regression that one has made the pre-processing don not need to keep the training data;
+In terms of processing the Logistic Regression have all the work in the pre-processing,  the kNN does not have any pre-processing but for every prediction have a high cult try to find the k closer values.
+\par
+For future analysis it could be experiment with different functions of distances for the kNN algorithm and also makes sense to normalize the data for Logistic Regression and comparing the resultants.
 
-space and computers power
-espaço ocupado pelo kNN e pelo logistic regresion
-
-The values of quality are not independent with this a mean if a wine and classify was quality '$x$' with is not the correct one, but is much more probably that the right quality is $x-1$ or $x+1$ than be $x-2$, $x+2$, $x-3$, $x+3$ ... \\
-We could have used this to classify the quality of wine.
-
-
-One of the motives for the result be soo low for the quality of one wine is a subjective thing, two wine enthusiasts do not necessary give the same qualification for the same wine. This way it would be interesting to compare the result our classifier with two independent groups of human wine enthusiasts for each wine. Since the quality is a subjective we would expect the error between our result and the human result should be close to the error between the two independent groups of humans.
-
-
-
-
-
-k par and k odd 
 %\lipsum[15-16]
 
 
@@ -305,22 +302,21 @@ k par and k odd
 %------------------------------------------------
 \end{multicols}
 \newpage
-\section*{Appendix A}
+\section*{Appendix}
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{\textwidth}
 \includegraphics[width=0.5\textwidth]{img/KNN-Type(Not-Scaled).png}
 \includegraphics[width=0.5\textwidth]{img/KNN-Type(Scaled).png}
 \caption{kNN - Type (With out and with the data scaled)}
-\label{fig:KNN-TYPE}
 \end{subfigure}
 
 \begin{subfigure}[b]{\textwidth}
 \includegraphics[width=0.5\textwidth]{img/KNN-Quality(Not-Scaled).png}
 \includegraphics[width=0.5\textwidth]{img/KNN-Quality(Scaled).png}
 \caption{kNN - Quality (With out and with the data scaled)}
-\label{fig:KNN-Quality}
 \end{subfigure}
+\label{fig:FindK}
 \caption{Find k for the kNN}
 \end{figure}
 
