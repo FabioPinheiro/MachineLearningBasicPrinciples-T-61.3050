@@ -42,7 +42,7 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Comparing k-NN and Logistic Regression algorithms for Wine classification}}
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Comparing kNN and Logistic Regression algorithms for Wine classification}}
 
 \author{
 \large
@@ -63,7 +63,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-The idea of the project and this report is to see how different KNN and Logistic Regression are. Our main problem divides itself in two sub problems of supervised classification, with one being a binary supervised classification and the other a 7-class supervised classification, and we will see how both algorithms behave in each case.
+The idea of the project and this report is to see how different kNN and Logistic Regression are. Our main problem divides itself in two sub problems of supervised classification, with one being a binary supervised classification and the other a 7-class supervised classification, and we will see how both algorithms behave in each case.
 
 %\noindent \lipsum[1]
 
@@ -88,16 +88,16 @@ The data we're given consists of a set of measures from 6000 different wines. Th
 \section{Methods}
 \subsection*{Normalize data}
 
-\subsection*{k-nearest neighbors algorithm (k-NN)}
+\subsection*{k-nearest neighbors algorithm (kNN)}
 \indent \par
-K-nearest neighbors algorithm also known as k-NN is a non-parametric method used for classification and regression. In both cases the k-NN algorithm starts from the principle that similar data are closed one to another.\par
+K-nearest neighbors algorithm also known as kNN is a non-parametric method used for classification and regression. In both cases the kNN algorithm starts from the principle that similar data are closed one to another.\par
 The algorithm is just given a point '$Y$' to find the '$k$' points from training data where distance where is smaller that all the anthers. Then choose the class more frequent, in case of a tie, pick one at random among them.\par
-The pseudocode for k-NN can be seen in Algorithm~\ref{alg:KNN} \cite{CA}
-%The pseudocode for k-NN in Algorithm~\ref{alg:KNN}, is from Statistical Methods in Data Mining Lecture Slides \cite{CA}.
+The pseudocode for kNN can be seen in Algorithm~\ref{alg:KNN} \cite{CA}
+%The pseudocode for kNN in Algorithm~\ref{alg:KNN}, is from Statistical Methods in Data Mining Lecture Slides \cite{CA}.
 
 \begin{algorithm*}[t]
 %\footnotemark
-\caption{KNN} %\footnote{An example footnote.}}
+\caption{kNN} %\footnote{An example footnote.}}
 \label{alg:KNN}
 \begin{algorithmic} [1]
     \State Define the distance measure or similarity between two objects \label{1}
@@ -124,7 +124,19 @@ For n dimensions Euclidean Distance is give by following formula:
 %------------------------------------------------
 
 \section{Experiments}
-\subsection*{data:}
+\indent \par
+	The first thing we need to do is to separate our data consisting of 6000 row elements in training and validation set, and a test set, which will be used exclusevly to predict the error of our methods. We splited the data so we have 1000 elements in the test set, and the remaining data will be used to train our model or to make assesments about the data, this will not be used to predict the error of our models.\par
+	A premminilary analysis shows us the data is not normalized, so when applying different algorithms this will play a huge role, but we decided to test it as it is, and then normalize the data and see how much it improves, if it improves, as we believe it will.\par
+	The procedures we took for predict the quality and type of the wine were the same, except when predicting the quality we used the values predicted for wine type to see if would improve it somehow.\par
+	Our first task is to predict the wine type since it will be more accurate being just a binary problem. When applying the kNN we first had to predict what's the k (the number of neighbours). We did this, separating the training set (consisting of the 5000 elements) into 3750 training elements, and 1250 validation elements. We run the kNN with K going from 1 to 20, recorded the errors and took conclusions from that. We then did the same for the standardized data. To apply the logistic regression we just used the whole training set as one, and didn't split it. Predicted the type with non normalized data, it was time to use a go with the normalized approach. The logistic regression was basically the same, we normalized the variables using the 6000 elements, and made a prediction. We the kNN, we first normalized the 5000 elements of the training set (without the quality and type) and tried to get the best K for the problem. After that, we joined both the training set and test set, without the quality and type variables, and normalized it, and we made the prediciton for the type.\par
+As said before, when predicting the quality type using either algorithm, we tried using the wine type to see if the results improved in some way.
+
+%\subsection*{Wine type:}
+%\subsection*{Wine quality}
+%------------------------------------------------
+
+\section{Results}
+\subsection*{\textbf{Data:}}
 \begin{itemize}
   \item Number of parameters: 11
   \item Number of samples in training set: $5000$
@@ -140,36 +152,23 @@ For n dimensions Euclidean Distance is give by following formula:
   \item Number of samples in test set: $1000$
 \end{itemize}
 
-\indent \par
-	The first thing we need to do is to separate our data consisting of 6000 row elements in training and validation set, and a test set, which will be used exclusevly to predict the error of our methods. We splited the data so we have 1000 elements in the test set, and the remaining data will be used to train our model or to make assesments about the data, this will not be used to predict the error of our models.\par
-	A premminilary analysis shows us the data is not normalized, so when applying different algorithms this will play a huge role, but we decided to test it as it is, and then normalize the data and see how much it improves, if it improves, as we believe it will.\par
-	The procedures we took for predict the quality and type of the wine were the same, except when predicting the quality we used the values predicted for wine type to see if would improve it somehow.\par
-	Our first task is to predict the wine type since it will be more accurate being just a binary problem. When applying the KNN we first had to predict what's the k (the number of neighbours). We did this, separating the training set (consisting of the 5000 elements) into 3750 training elements, and 1250 validation elements. We run the KNN with K going from 1 to 20, recorded the errors and took conclusions from that. We then did the same for the standardized data. To apply the logistic regression we just used the whole training set as one, and didn't split it. Predicted the type with non normalized data, it was time to use a go with the normalized approach. The logistic regression was basically the same, we normalized the variables using the 6000 elements, and made a prediction. We the KNN, we first normalized the 5000 elements of the training set (without the quality and type) and tried to get the best K for the problem. After that, we joined both the training set and test set, without the quality and type variables, and normalized it, and we made the prediciton for the type.\par
-As said before, when predicting the quality type using either algorithm, we tried using the wine type to see if the results improved in some way.
-
-%\subsection*{Wine type:}
-%\subsection*{Wine quality}
-%------------------------------------------------
-
-\section{Results}
-
-\subsection*{k-NN}
+\subsection*{\textbf{kNN:}}
 \begin{table}[H]
-\caption{aaaaaaaaaaaaaaaaaa}
+\caption{Result summary for kNN}
 \centering
 \begin{tabular}{r|l}
-\textbf{Table type} & \textbf{aaaaaaaaaaaaa}\\
+\textbf{Experiment} & \textbf{Accuracy}\\
 \midrule
-Type  & $0.953$\\
-Type (scaled) & $0.994$\\
+Type  & $95.3\%$\\
+Type (scaled) & $99.4\%$\\
 \hline
-Quality & $0.428$\\
-Quality (scaled) & $0.634$\\
+Quality & $42.8\%$\\
+Quality (scaled) & $63.4\%$\\
 \end{tabular}
 \end{table}
 
 \begin{table}[H]
-\caption{Confusion matrix for k-NN with k=1}
+\caption{Confusion matrix for kNN with k=1}
 \centering
 \begin{tabular}{r||c|c|c|c|c|c|c}
 \textbf{Quality} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7}\\
@@ -191,16 +190,16 @@ Quality (scaled) & $0.634$\\
 \end{table}
 
 
-\subsection*{Logistic Regression}
+\subsection*{\textbf{Logistic Regression:}}
 \begin{table}[H]
-\caption{aaaaaaaaaaaaaaaaaa}
+\caption{Result summary for Logistic Regression}
 \centering
 \begin{tabular}{r|l}
-\textbf{Table type} & \textbf{aaaaaaaaaaaaaaaaaa}\\
+\textbf{Experiment} & \textbf{Accuracy}\\
 \midrule
-Type & $0.996$\\
-Quality & $0.513$\\
-Quality using type & $0.518$\\
+Type & $99.6\%$\\
+Quality & $51.3\%$\\
+Quality using type & $51.8\%$\\
 \end{tabular}
 \end{table}
 
@@ -234,7 +233,7 @@ Quality using type & $0.518$\\
 \section{Discussion}
 
 space and computers power
-espaço ocupado pelo knn e pelo logistic regresion
+espaço ocupado pelo kNN e pelo logistic regresion
 
 The values of quality are not independent with this a mean if a wine and classify was quality '$x$' with is not the correct one, but is much more probably that the right quality is $x-1$ or $x+1$ than be $x-2$, $x+2$, $x-3$, $x+3$ ... \\
 We could have used this to classify the quality of wine.
@@ -265,17 +264,19 @@ k par and k odd
   MIT press,
   2004.
 \bibitem{CA} 
-  Concei\,{c}\~{a}o, Amado -
-  Lecture Slides: Statistical Methods in Data Mining (2014). Instituto Superior Técnico, Portugal.  
+  Concei\c{c}\~{a}o, Amado -
+  Lecture Slides: Statistical Methods in Data Mining (2014). Instituto Superior Técnico, Portugal.
+\bibitem{hb}
+  Duro, Jo\~{a}o \& Pinheiro, F\'{a}bio - Project code of Machine Learning Basic Principles,
+  \url{https://github.com/FabioPinheiro/MachineLearningBasicPrinciples-T-61.3050}
+\bibitem{hb}
+  Howe, Bill - k Nearest Neighbors,
+  \url{https://class.coursera.org/datasci-001/lecture/161}
 \bibitem{ng}
   Ng, Andrew - 
   Machine Learning. Multiclass Classifier: One-vs-All,
   \url{https://class.coursera.org/ml-005/lecture/38}.
-\bibitem{hb}
-  Howe, Bill - k Nearest Neighbors,
-  \url{https://class.coursera.org/datasci-001/lecture/161}
 
-  
 \end{thebibliography}
 %------------------------------------------------
 \end{multicols}
@@ -286,19 +287,17 @@ k par and k odd
 \begin{subfigure}[b]{\textwidth}
 \includegraphics[width=0.5\textwidth]{img/KNN-Quality(Not-Scaled).png}
 \includegraphics[width=0.5\textwidth]{img/KNN-Quality(Scaled).png}
-\caption{KNN-Quality (With out and with the data scaled)}
+\caption{kNN - Quality (With out and with the data scaled)}
 \label{fig:KNN-Quality}
 \end{subfigure}
 
 \begin{subfigure}[b]{\textwidth}
 \includegraphics[width=0.5\textwidth]{img/KNN-Type(Not-Scaled).png}
 \includegraphics[width=0.5\textwidth]{img/KNN-Type(Scaled).png}
-\caption{KNN-Type (With out and with the data scaled)}
+\caption{kNN - Type (With out and with the data scaled)}
 \label{fig:KNN-TYPE}
 \end{subfigure}
-
-
-\caption{Find k for the k-NN}
+\caption{Find k for the kNN}
 \end{figure}
 
 
