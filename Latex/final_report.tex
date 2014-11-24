@@ -46,8 +46,8 @@
 
 \author{
 \large
-\textsc{Algorithms for classification of wine types and quality}\\[2mm]
-\textsc{F\'{a}bio Pinheiro  \& Jo\~{a}o Duro}\\[2mm]
+\textsc{T-61.3050 Term Project, final report}\\[2mm]
+\textsc{472735 F\'{a}bio Pinheiro \& 472191 Jo\~{a}o Duro}\\[2mm]
 \vspace{-5mm}
 }
 \date{}
@@ -68,7 +68,6 @@ The idea of the project and this report is to see how different kNN and Logistic
 %\noindent \lipsum[1]
 
 \end{abstract}
-""""Com o almento do power computational começa a fazer sentido usar algoritons mais complaxesos para obetremos melhores resultados.""""
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
@@ -79,7 +78,6 @@ The idea of the project and this report is to see how different kNN and Logistic
 \section{Introduction}
 \indent \par
 The data we're given consists of a set of measures from 6000 different wines. The attributes of the wines are "fixedAcidity", "volatileAcidity"," citricAcid", "residualSugar", "chlorides", freeSulfurDioxide, "totalSulfurDioxide", "density", "pH", "sulphates", "alcohol", "quality" and "type". Our first goal is try and predict the quality of the wine, which is classified as "White" or "Red, and later, try and predict based on the same attributes the quality of the wine which is a integer variable ranging from 1 to 7, 1 being really good, and 7 being really poor. Based on the results and our understading of how the algoithms work, we will try and see how different it is to predict to a binary class or a 7-value class.\\
- """"""""""ACRESCENTAR MERDAS AQUI""""""""""""
 %\lipsum[2-4]
 
 
@@ -159,13 +157,28 @@ As said before, when predicting the quality type using either algorithm, we trie
 \begin{tabular}{r|l}
 \textbf{Experiment} & \textbf{Accuracy}\\
 \midrule
-Type  & $95.3\%$\\
-Type (scaled) & $99.4\%$\\
+Type (k=4)  & $95.3\%$\\
+Type (scaled \& K=1) & $99.4\%$\\
 \hline
-Quality & $42.8\%$\\
-Quality (scaled) & $63.4\%$\\
+Quality (k=12) & $42.8\%$\\
+Quality (scaled \& k=1) & $63.4\%$\\
 \end{tabular}
 \end{table}
+
+\begin{table}[H]
+\caption{Confusion matrix for type using kNN with k=1 and data scaled}
+\label{ConfusionKNNscaled}
+\centering
+\begin{tabular}{r||c|c}
+\textbf{Type} & \textbf{White} & \textbf{Red} \\
+\hline \hline
+\textbf{White} & 798  & 6\\
+\hline
+\textbf{Red} & 0 & 196\\
+\end{tabular}
+\end{table}
+
+The columns have the expected results and the line we have the real values, for example: In table~\ref{ConfusionKNNscaled}, six of the white wines have been predicted to be red.
 
 \begin{table}[H]
 \caption{Confusion matrix for quality using kNN with k=1 and data scaled}
@@ -203,6 +216,17 @@ Quality using type & $51.8\%$\\
 \end{tabular}
 \end{table}
 
+\begin{table}[H]
+\caption{Confusion matrix for type using Logistic Regression}
+\centering
+\begin{tabular}{r||c|c}
+\textbf{Type} & \textbf{White} & \textbf{Red} \\
+\hline \hline
+\textbf{White} & 802  & 2\\
+\hline
+\textbf{Red} & 2 & 194\\
+\end{tabular}
+\end{table}
 
 \begin{table}[H]
 \caption{Confusion matrix for quality using Logistic Regression}
@@ -285,17 +309,17 @@ k par and k odd
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{\textwidth}
-\includegraphics[width=0.5\textwidth]{img/KNN-Quality(Not-Scaled).png}
-\includegraphics[width=0.5\textwidth]{img/KNN-Quality(Scaled).png}
-\caption{kNN - Quality (With out and with the data scaled)}
-\label{fig:KNN-Quality}
-\end{subfigure}
-
-\begin{subfigure}[b]{\textwidth}
 \includegraphics[width=0.5\textwidth]{img/KNN-Type(Not-Scaled).png}
 \includegraphics[width=0.5\textwidth]{img/KNN-Type(Scaled).png}
 \caption{kNN - Type (With out and with the data scaled)}
 \label{fig:KNN-TYPE}
+\end{subfigure}
+
+\begin{subfigure}[b]{\textwidth}
+\includegraphics[width=0.5\textwidth]{img/KNN-Quality(Not-Scaled).png}
+\includegraphics[width=0.5\textwidth]{img/KNN-Quality(Scaled).png}
+\caption{kNN - Quality (With out and with the data scaled)}
+\label{fig:KNN-Quality}
 \end{subfigure}
 \caption{Find k for the kNN}
 \end{figure}
