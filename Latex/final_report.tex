@@ -36,6 +36,7 @@
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
+\usepackage{subcaption}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -119,13 +120,6 @@ For n dimensions Euclidean Distance is give by following formula:
 "It is assumed that we have a series of N observed data points. Each data point i consists of a set of m explanatory variables $x_{1,i} x_{2,i} \dots x_{m,i}$ (also called independent variables, predictor variables, input variables, features, or attributes), and an associated binary-valued outcome variable $Y_i$ (also known as a dependent variable, response variable, output variable, outcome variable or class variable), i.e. it can assume only the two possible values "failure" or 1 "success". The goal of logistic regression is to explain the relationship between the explanatory variables and the outcome, so that an outcome can be predicted for a new set of explanatory variables."
 
 %\lipsum[5-9]
-
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=0.5\textwidth]{learning}
-%\caption{Learning is important but big processors are importanter. \cite{alpaydin2004introduction}}
-%\label{fig:learning}
-%\end{figure}
 
 %------------------------------------------------
 
@@ -274,11 +268,27 @@ k par and k odd
 \end{multicols}
 \newpage
 \section*{Appendix A}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{\textwidth}
+\includegraphics[width=0.5\textwidth]{img/KNN-Quality(Not-Scaled).png}
+\includegraphics[width=0.5\textwidth]{img/KNN-Quality(Scaled).png}
+\caption{KNN-Quality (With out and with the data scaled)}
+\label{fig:KNN-Quality}
+\end{subfigure}
 
-%\lipsum[17]
+\begin{subfigure}[b]{\textwidth}
+\includegraphics[width=0.5\textwidth]{img/KNN-Type(Not-Scaled).png}
+\includegraphics[width=0.5\textwidth]{img/KNN-Type(Scaled).png}
+\caption{KNN-Type (With out and with the data scaled)}
+\label{fig:KNN-TYPE}
+\end{subfigure}
+
+
+\caption{Find k for the k-NN}
+\end{figure}
+
+
 
 %----------------------------------------------------------------------------------------
-
-
-
 \end{document}

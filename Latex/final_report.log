@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.2)  24 NOV 2014 01:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.2)  24 NOV 2014 02:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,29 +679,46 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip63
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (./final_report.aux)
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count141
+\c@subtable=\count142
+)
+(./final_report.aux
+
+LaTeX Warning: Label `fig:KNN-Quality' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:KNN-Quality' multiply defined.
+
+
+LaTeX Warning: Label `fig:KNN-TYPE' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:KNN-TYPE' multiply defined.
+
+)
 \openout1 = `final_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Try loading font information for T1+pplx on input line 56.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplx.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Try loading font information for T1+pplx on input line 57.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
-LaTeX Info: Redefining \microtypecontext on input line 56.
+LaTeX Info: Redefining \microtypecontext on input line 57.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -717,16 +734,16 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count141
+\scratchcounter=\count143
 \scratchdimen=\dimen172
 \scratchbox=\box59
-\nofMPsegments=\count142
-\nofMParguments=\count143
+\nofMPsegments=\count144
+\nofMParguments=\count145
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count144
+\MPscratchCnt=\count146
 \MPscratchDim=\dimen173
-\MPnumerator=\count145
-\makeMPintoPDFobject=\count146
+\MPnumerator=\count147
+\makeMPintoPDFobject=\count148
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -783,50 +800,50 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring OFF on input line 56.
+Package hyperref Info: Link coloring OFF on input line 57.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count147
+\c@section@level=\count149
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
 
 (./final_report.out) (./final_report.out)
 \@outlinefile=\write3
 \openout3 = `final_report.out'.
 
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 59.
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 59.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 60.
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 59.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 59.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 59.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 59.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -840,16 +857,16 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 64.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 65.
 
-Overfull \hbox (20.58722pt too wide) in paragraph at lines 80--83
+Overfull \hbox (20.58722pt too wide) in paragraph at lines 81--84
 \T1/pplx/m/n/10 (-20) """"""""""ACRESCENTAR MER-DAS AQUI"""""""""""" 
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 99.
+put line 100.
 
-Overfull \hbox (26.47202pt too wide) detected at line 114
+Overfull \hbox (26.47202pt too wide) detected at line 115
 \OML/zplm/m/it/10 d\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 p\OT1/pplx/m/n/10 , \OML
 /zplm/m/it/10 q\OT1/zplm/m/n/10 ) = []
  []
@@ -857,25 +874,25 @@ Overfull \hbox (26.47202pt too wide) detected at line 114
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+pplx on input line 135
+LaTeX Font Info:    Try loading font information for OMS+pplx on input line 129
 .
-LaTeX Font Info:    No file OMSpplx.fd. on input line 135.
+LaTeX Font Info:    No file OMSpplx.fd. on input line 129.
 
 
 LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 135.
+(Font)              for symbol `textbullet' on input line 129.
 
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 162.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 156.
 
-Overfull \hbox (2.98772pt too wide) in paragraph at lines 178--195
+Overfull \hbox (2.98772pt too wide) in paragraph at lines 172--189
  [][] 
  []
 
 [2]
 No file final_report.bbl.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 265.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 259.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -885,36 +902,76 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--270
+Underfull \hbox (badness 10000) in paragraph at lines 261--264
 []\T1/pplx/m/n/10 (+20) Howe, Bill - k Near-est Neigh-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--270
+Underfull \hbox (badness 10000) in paragraph at lines 261--264
 \T1/pplx/m/n/10 (+20) bors, []$\T1/cmtt/m/n/10 https : / / class . coursera . o
 rg /
  []
 
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
+[3] <img/KNN-Quality(Not-Scaled).png, id=64, 481.8pt x 380.42125pt>
+File: img/KNN-Quality(Not-Scaled).png Graphic file (type png)
+
+<use img/KNN-Quality(Not-Scaled).png>
+Package pdftex.def Info: img/KNN-Quality(Not-Scaled).png used on input line 274
+.
+(pdftex.def)             Requested size: 215.0023pt x 169.76pt.
+
+<img/KNN-Quality(Scaled).png, id=65, 481.8pt x 380.42125pt>
+File: img/KNN-Quality(Scaled).png Graphic file (type png)
+
+<use img/KNN-Quality(Scaled).png>
+Package pdftex.def Info: img/KNN-Quality(Scaled).png used on input line 275.
+(pdftex.def)             Requested size: 215.0023pt x 169.76pt.
+
+Overfull \hbox (2.20999pt too wide) in paragraph at lines 274--276
+[][] [] 
+ []
+
+<img/KNN-Type(Not-Scaled).png, id=66, 481.8pt x 380.42125pt>
+File: img/KNN-Type(Not-Scaled).png Graphic file (type png)
+
+<use img/KNN-Type(Not-Scaled).png>
+Package pdftex.def Info: img/KNN-Type(Not-Scaled).png used on input line 281.
+(pdftex.def)             Requested size: 215.0023pt x 169.76pt.
+
+<img/KNN-Type(Scaled).png, id=67, 481.8pt x 380.42125pt>
+File: img/KNN-Type(Scaled).png Graphic file (type png)
+
+<use img/KNN-Type(Scaled).png>
+Package pdftex.def Info: img/KNN-Type(Scaled).png used on input line 282.
+(pdftex.def)             Requested size: 215.0023pt x 169.76pt.
+
+Overfull \hbox (2.20999pt too wide) in paragraph at lines 281--283
+[][] [] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
+[4 <./img/KNN-Quality(Not-Scaled).png> <./img/KNN-Quality(Scaled).png> <./img/K
+NN-Type(Not-Scaled).png> <./img/KNN-Type(Scaled).png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
  (./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
 (rerunfilecheck)             Checksum: 43FC7555E8468C713714710A378C0EEF;308.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
  ) 
 Here is how much of TeX's memory you used:
- 10769 strings out of 494963
- 161747 string characters out of 6179647
- 404298 words of memory out of 5000000
- 13611 multiletter control sequences out of 15000+600000
+ 10851 strings out of 494963
+ 163350 string characters out of 6179647
+ 405426 words of memory out of 5000000
+ 13684 multiletter control sequences out of 15000+600000
  59157 words of font info for 205 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
  36i,7n,38p,745b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -927,10 +984,10 @@ c/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplr
 c8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on final_report.pdf (4 pages, 116417 bytes).
+Output written on final_report.pdf (4 pages, 143703 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
- 46641 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 139 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
+ 46661 words of extra memory for PDF output out of 51595 (max. 10000000)
 
